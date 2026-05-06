@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Bibiyane Mohamad • Portal VIP</title>
+    <title>Bibiyane Mohamad • Portal VIP +18</title>
 
     <style>
         * {
@@ -85,7 +85,7 @@
             color: #444;
             max-width: 90%;
             margin: 0 auto;
-            background: rgba(212, 212, 212, 0.05);
+            background: rgba(0, 168, 204, 0.05);
             border-radius: 20px;
         }
 
@@ -232,91 +232,59 @@
             border-top: 1px solid #eee;
         }
 
-        /* Container do vídeo com blur extremo */
-        .video-blur-container {
+        .video-block-container {
             position: relative;
             width: 100%;
+            background: #000;
             border-radius: 16px;
             overflow: hidden;
-            aspect-ratio: 16/9;
-            background: #000;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
         }
 
-        .video-blur-container video {
+        .video-block-container video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(20px);
-            transform: scale(1.05);
             display: block;
         }
 
-        /* Overlay do cadeado */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-            z-index: 10;
+            gap: 12px;
+            transition: 0.2s;
+            z-index: 5;
         }
 
-        .lock-icon-big {
-            font-size: 60px;
+        .video-overlay .lock-icon-big {
+            font-size: 48px;
             background: rgba(255, 255, 255, 0.2);
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(8px);
         }
 
-        .overlay-text {
-            background: rgba(0, 0, 0, 0.9);
+        .video-overlay .overlay-text {
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 10px 20px;
+            padding: 8px 20px;
             border-radius: 40px;
             font-weight: bold;
             font-size: 14px;
-        }
-
-        /* Seta animada apontando para baixo */
-        .arrow-down-animation {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 1.2s infinite;
-            z-index: 20;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: #ff6a5c;
-            text-shadow: 0 0 5px white;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(12px);
-            }
         }
 
         .persuasive-btn {
@@ -331,10 +299,6 @@
             cursor: pointer;
             transition: 0.2s;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .persuasive-btn:active {
-            transform: scale(0.97);
         }
 
         .call-buttons {
@@ -489,6 +453,189 @@
             z-index: 99999;
         }
 
+        /* MODAL DE COLETA DE DADOS */
+        .data-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .data-card {
+            background: white;
+            width: 90%;
+            max-width: 380px;
+            border-radius: 32px;
+            overflow: hidden;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .data-header {
+            background: #1e2a3e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .data-body {
+            padding: 20px;
+        }
+
+        .data-input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(90deg, #00bcd4, #0097a7);
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 14px;
+            border-radius: 60px;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        /* MODAL DE PAGAMENTO */
+        .payment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 100001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .payment-card {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 32px;
+            overflow: hidden;
+        }
+
+        .payment-header {
+            background: #1e2a3e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .payment-body {
+            padding: 20px;
+        }
+
+        .info-box {
+            background: #f0f4f8;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .copy-area {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 5px 5px 15px;
+            margin: 10px 0;
+        }
+
+        .copy-area span {
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background: #00a8cc;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .copy-feedback {
+            font-size: 12px;
+            color: green;
+            margin-top: 4px;
+        }
+
+        .btn-mpesa {
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 14px;
+            border-radius: 60px;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .btn-pago {
+            background: #ff9800;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 14px;
+            border-radius: 60px;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .status-msg {
+            text-align: center;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            background: #f8d7da;
+            color: #721c24;
+        }
+
         @media (max-width: 500px) {
             .plan-left .sub {
                 font-size: 10px;
@@ -513,26 +660,24 @@
             <div>❤️ 21.2K</div>
         </div>
         <div class="name">Bibiyane Mohamad ✔️</div>
-        <div class="username">@bibiyanemohamad • Maputo 🇲🇿</div>
+        <div class="username">@bibiyanepriv • Beira 🇲🇿</div>
         <div style="color:#00a8cc; margin: 5px 0;">💎 Disponível agora para conteúdo privado</div>
         <div class="bio">
-    👀 Conteúdos que não posso postar aqui…  
-🔥 Acesso total sem censura  
-💎 Entra e vê tudo agora.
+            🌸 Oi, sou a Bibiyane Mohamad 🇲🇿 Criadora de conteúdo & lifestyle. Junta-te à minha comunidade para conteúdo exclusivo, Grupo anônimo e conteúdo novo todos dias ✨🔥
         </div>
-        <div class="cta" onclick="checkout197()">
+        <div class="cta" onclick="abrirColetaDados('199')">
             👑 QUERO SER MEMBRO VIP
         </div>
     </div>
 
-    <!-- POST 1 -->
+    <!-- POSTS -->
     <div class="post">
         <div class="post-header">
-            <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
+            <img src="https://i.postimg.cc/BvnJnR55/perfil.jpg" class="avatar">
             <div class="post-info"><b>Bibiyane Mohamad 🍑💦🍆</b><br><span style="color:#777;font-size:12px;">12h</span></div>
         </div>
         <div class="post-text">🇲🇿 Vem ter uma vídeo chamada comigo 🍆🍑💦🇲🇿 tá quente hoje 🔥</div>
-        <div class="post-img" style="background:url('https://i.postimg.cc/QxJkfkGQ/IMG-0726.jpg');"></div>
+        <div class="post-img" style="background:url('https://i.postimg.cc/SRDrk2m1/vg2.jpg');"></div>
         <div class="lock-overlay">
             <div class="lock-circle"><span>🔒</span></div>
             <div class="lock-text">Conteúdo Exclusivo • Desbloqueie abaixo</div>
@@ -540,14 +685,13 @@
         <div class="actions"><div>❤️ 723</div><div>💬 201</div><div>🔗</div></div>
     </div>
 
-    <!-- POST 2 -->
     <div class="post">
         <div class="post-header">
-            <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
+            <img src="https://i.postimg.cc/BvnJnR55/perfil.jpg" class="avatar">
             <div class="post-info"><b>Bibiyane Mohamad 🍑💦🍆</b><br><span style="color:#777;font-size:12px;">5h</span></div>
         </div>
         <div class="post-text">Conteúdo novo acabou de sair 💦🍑 só pra quem é VIP 👑</div>
-        <div class="post-img" style="background:url('https://i.postimg.cc/HLqyYVDz/IMG-0724.jpg');"></div>
+        <div class="post-img" style="background:url('https://i.postimg.cc/ZRPHss2S/vg1.jpg');"></div>
         <div class="lock-overlay">
             <div class="lock-circle"><span>🔒</span></div>
             <div class="lock-text">Desbloqueie agora</div>
@@ -555,237 +699,253 @@
         <div class="actions"><div>❤️ 1.2K</div><div>💬 340</div><div>🔗</div></div>
     </div>
 
-    <!-- ========= SEÇÃO DE 4 PERGUNTAS FORTES +18 ========= -->
+    <!-- SEÇÃO PERGUNTAS -->
     <div class="questions-section">
         <div class="section-title">🔞 Perguntas Íntimas (Só +18) 🔞</div>
-
-        <!-- PERGUNTA 1 -->
         <div id="question1" class="question-card">
             <div class="question-header" onclick="toggleAnswer(1)">🍆 Já fizeste strip para alguém por chamada? <span>▼</span></div>
             <div id="answer1" class="answer-area">
-                <div class="video-blur-container" id="videoContainer1">
-                    <video id="video1" loop muted playsinline>
-                        <source src="https://files.catbox.moe/sik0st1.mp4" type="video/mp4">
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                <div id="videoWrapper1" class="video-block-container">
+                    <video id="video1" loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+                        <source src="https://files.catbox.moe/jiid0i.mp4" type="video/mp4">
                     </video>
                     <div id="overlay1" class="video-overlay">
                         <div class="lock-icon-big">🔒</div>
-                        <div class="overlay-text">🔞 Conteúdo Muito Sensível • Desbloqueie</div>
+                        <div class="overlay-text">🔞 Conteúdo Privado • Desbloqueie</div>
                     </div>
-                    <div id="arrow1" class="arrow-down-animation" style="display: none;">👇</div>
                 </div>
                 <div class="persuasive-btn" onclick="desbloquearVideo(1)">📹 Quero te ver pelada agora! 📹</div>
                 <div id="callArea1" style="display:none;">
-                    <div class="mensagem-persuasiva">💋 Amor, você está a um clique de me ter em vídeo chamada PRIVADA. Eu mesma te mostro tudo, sem censura. Basta clicar em SIM e garantir seu acesso VIP. Prometo que vai delirar 🔥🍆💦</div>
+                    <div class="mensagem-persuasiva">💋 Amor, você está a um clique de me ter em vídeo chamada PRIVADA.</div>
                     <div class="call-buttons">
-                        <div class="btn-sim" onclick="redirecionarPlanos()">✅ SIM, quero vídeo chamada agora!</div>
+                        <div class="btn-sim" onclick="abrirColetaDados('199')">✅ SIM, quero vídeo chamada agora!</div>
                         <div class="btn-nao" onclick="fecharChamada(1)">❌ Não, depois</div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- PERGUNTA 2 -->
         <div id="question2" class="question-card">
             <div class="question-header" onclick="toggleAnswer(2)">💦 Como posso te ter nua em chamada? <span>▼</span></div>
             <div id="answer2" class="answer-area">
-                <div class="video-blur-container" id="videoContainer2">
-                    <video id="video2" loop muted playsinline>
-                        <source src="https://files.catbox.moe/sik0st1.mp4" type="video/mp4">
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-                    </video>
-                    <div id="overlay2" class="video-overlay">
-                        <div class="lock-icon-big">🔒</div>
-                        <div class="overlay-text">🔞 Conteúdo Muito Sensível • Desbloqueie</div>
-                    </div>
-                    <div id="arrow2" class="arrow-down-animation" style="display: none;">👇</div>
+                <div id="videoWrapper2" class="video-block-container">
+                    <video id="video2" loop muted playsinline><source src="https://files.catbox.moe/hyhpjx.mp4"></video>
+                    <div id="overlay2" class="video-overlay"><div class="lock-icon-big">🔒</div><div class="overlay-text">🔞 Toque no botão</div></div>
                 </div>
                 <div class="persuasive-btn" onclick="desbloquearVideo(2)">💋 Eu quero uma chamada quente 💋</div>
                 <div id="callArea2" style="display:none;">
-                    <div class="mensagem-persuasiva">😈 Gostoso, você quer me ver toda? Então clique em SIM e escolhe seu plano VIP. Eu tenho WhatsApp exclusivo para vídeo chamada +18, mostro o que quiseres. Acelera 🔞🍑</div>
-                    <div class="call-buttons">
-                        <div class="btn-sim" onclick="redirecionarPlanos()">🔥 SIM, quero vídeo chamada 🔥</div>
-                        <div class="btn-nao" onclick="fecharChamada(2)">🚫 Não, obrigado</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PERGUNTA 3 -->
-        <div id="question3" class="question-card">
-            <div class="question-header" onclick="toggleAnswer(3)">🍑 O que fazes numa vídeo chamada privada? <span>▼</span></div>
-            <div id="answer3" class="answer-area">
-                <div class="video-blur-container" id="videoContainer3">
-                    <video id="video3" loop muted playsinline>
-                        <source src="https://files.catbox.moe/sik0st1.mp4" type="video/mp4">
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4" type="video/mp4">
-                    </video>
-                    <div id="overlay3" class="video-overlay">
-                        <div class="lock-icon-big">🔒</div>
-                        <div class="overlay-text">🔞 Conteúdo Muito Sensível • Desbloqueie</div>
-                    </div>
-                    <div id="arrow3" class="arrow-down-animation" style="display: none;">👇</div>
-                </div>
-                <div class="persuasive-btn" onclick="desbloquearVideo(3)">📞 Quero ver você pelada agora 📞</div>
-                <div id="callArea3" style="display:none;">
-                    <div class="mensagem-persuasiva">✨ Amor, eu faço strip, mando beijos quentes, mostro o que mais gostas… Só pra quem é VIP. Tô online agora mesmo, só clicar em SIM e comprar o acesso. Me espera 🔥🍆💦</div>
-                    <div class="call-buttons">
-                        <div class="btn-sim" onclick="redirecionarPlanos()">💎 SIM, QUERO AGORA 💎</div>
-                        <div class="btn-nao" onclick="fecharChamada(3)">❌ Depois</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PERGUNTA 4 -->
-        <div id="question4" class="question-card">
-            <div class="question-header" onclick="toggleAnswer(4)">🔞 Já fizeste sexo ao vivo pra web? <span>▼</span></div>
-            <div id="answer4" class="answer-area">
-                <div class="video-blur-container" id="videoContainer4">
-                    <video id="video4" loop muted playsinline>
-                        <!-- <source src="https://files.catbox.moe/sik0st1.mp4" type="video/mp4"> -->
-                                 <div class="post-img" style="background:url('https://i.postimg.cc/zfSkSD4s/y2.jpg');"></div>
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
-                    </video>
-                    <div id="overlay4" class="video-overlay">
-                        <div class="lock-icon-big">🔒</div>
-                        <div class="overlay-text">🔞 Conteúdo Muito Sensível • Desbloqueie</div>
-                    </div>
-                    <div id="arrow4" class="arrow-down-animation" style="display: none;">👇</div>
-                </div>
-                <div class="persuasive-btn" onclick="desbloquearVideo(4)">🌹 Quero te ver pelada agora 🌹</div>
-                <div id="callArea4" style="display:none;">
-                    <div class="mensagem-persuasiva">🌹 Você merece um show privado. Me liga em vídeo depois de assinar o VIP. Tenho WhatsApp com número pessoal para membros. Vem com tudo, bebé 🌹💦🍆</div>
-                    <div class="call-buttons">
-                        <div class="btn-sim" onclick="redirecionarPlanos()">✅ SIM, QUERO VÍDEO CHAMADA ✅</div>
-                        <div class="btn-nao" onclick="fecharChamada(4)">⛔ Não</div>
-                    </div>
+                    <div class="call-buttons"><div class="btn-sim" onclick="abrirColetaDados('199')">🔥 SIM</div><div class="btn-nao" onclick="fecharChamada(2)">🚫 Não</div></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PLANOS VIP -->
+    <!-- PLANOS -->
     <div class="section">
         <h3 style="color:#00a8cc; margin-bottom: 12px;">⭐ PLANOS VIP ⭐</h3>
-        <div class="plan" onclick="checkout197()">
-            <div class="plan-left">
-                <strong>🔥 30 Dias</strong>
-                <div class="sub">Acesso total + grupos</div>
-            </div>
-            <div class="prices">
-                <div><b>199 MZN</b></div>
-                <div class="sub">≈ 2,99 EUR</div>
-                <div class="kz">≈ 2.500 Kz</div>
-            </div>
+        <div class="plan" onclick="abrirColetaDados('199')">
+            <div class="plan-left"><strong>🔥 30 Dias</strong><div class="sub">Acesso total + grupos</div></div>
+            <div class="prices"><div><b>199 MZN</b></div><div class="sub">≈ 2,99 EUR</div><div class="kz">≈ 2.500 Kz</div></div>
         </div>
-
         <div class="popular-box">
             <div class="popular-tag">🔥 MAIS POPULAR 🔥</div>
-            <div class="plan popular" onclick="checkout297()">
-                <div class="plan-left">
-                    <strong>💎 3 Meses</strong>
-                    <div class="sub">Melhor custo + vídeo chamada</div>
-                </div>
-                <div class="prices">
-                    <div><b>299 MZN</b></div>
-                    <div class="sub">≈ 4,27 EUR</div>
-                    <div class="kz">≈ 3.700 Kz</div>
-                </div>
+            <div class="plan popular" onclick="abrirColetaDados('299')">
+                <div class="plan-left"><strong>💎 3 Meses</strong><div class="sub">Melhor custo + vídeo chamada</div></div>
+                <div class="prices"><div><b>299 MZN</b></div><div class="sub">≈ 4,27 EUR</div><div class="kz">≈ 3.700 Kz</div></div>
             </div>
         </div>
-
         <p>🎁 Bónus: acesso imediato + grupo secreto</p>
         <p style="color:#777;">✔ Pagamento 100% seguro • Fatura discreta</p>
     </div>
 
-    <!-- FAQ -->
     <div class="faq">
         <div onclick="toggleFaq(this)" class="faq-item"><span>🔒 É sigiloso?</span><span>▼</span></div>
-        <div class="resposta">Sim! Sua privacidade é prioridade. A fatura aparece como [MK-Digital] e não há menção ao conteúdo.</div>
+        <div class="resposta">Sim! Sua privacidade é prioridade.</div>
         <div onclick="toggleFaq(this)" class="faq-item"><span>⏱ Quando tenho acesso?</span><span>▼</span></div>
-        <div class="resposta">O acesso é imediato após confirmação. Você recebe os dados por e-mail e WhatsApp VIP.</div>
-        <div onclick="toggleFaq(this)" class="faq-item"><span>📹 Vídeo chamada como funciona?</span><span>▼</span></div>
-        <div class="resposta">Após assinar qualquer plano, recebe meu WhatsApp pessoal e agendamos chamada quente +18 😈</div>
+        <div class="resposta">O acesso é imediato após confirmação.</div>
     </div>
 
-    <div class="fixed" onclick="checkout197()">
+    <div class="fixed" onclick="abrirColetaDados('199')">
         🔓 Veja tudo por 199MZN → Desbloqueio imediato
     </div>
-
     <div id="notif">🔥 Alguém de Maputo entrou no VIP</div>
 
-    <!-- AGE GATE -->
     <div id="ageGate">
         <div style="background:#12263a;padding:30px;border-radius:30px;color:white;text-align:center;max-width:300px;">
             <h2>🔞 VERIFICAÇÃO DE IDADE</h2>
-            <p style="margin:15px 0">Este site contém material explícito +18. Você tem mais de 18 anos?</p>
+            <p>Você tem mais de 18 anos?</p>
             <button onclick="entrar()" style="padding:14px;background:#00bcd4;border:none;border-radius:40px;color:white;width:100%;font-weight:bold;">✅ SIM, TENHO +18</button>
         </div>
     </div>
 
     <script>
-        // Mostrar seta após 3 segundos (para todas as perguntas)
-        setTimeout(() => {
-            for (let i = 1; i <= 4; i++) {
-                const arrow = document.getElementById('arrow' + i);
-                if (arrow) arrow.style.display = 'flex';
-            }
-        }, 3000);
+        let valorAtual = '199';
+        let dadosCliente = { whatsapp: '', numeroEnvio: '' };
 
-        // Função para desbloquear vídeo (remove blur e overlay)
+        // FUNÇÃO PARA ABRIR MODAL DE COLETA DE DADOS
+        function abrirColetaDados(valor) {
+            valorAtual = valor;
+            const modalHtml = `
+                <div id="dataModal" class="data-modal">
+                    <div class="data-card">
+                        <div class="data-header">🔐 Confirmar Acesso VIP - ${valor} MZN</div>
+                        <div class="data-body">
+                            <p style="text-align:center; margin-bottom:10px;">Preencha os dados para continuar</p>
+                            <input type="tel" id="numeroEnvioInput" class="data-input" placeholder="Nome e Apelido)" autocomplete="off">
+                            <input type="tel" id="whatsappInput" class="data-input" placeholder="📱 Seu WhatsApp (ex: 841234567)" autocomplete="off">
+                            <button class="btn-enviar" onclick="enviarDados()">📤 ENVIAR DADOS</button>
+                            <button style="background:#999; margin-top:10px;" class="btn-enviar" onclick="fecharModal('dataModal')">❌ Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            if (document.getElementById('dataModal')) document.getElementById('dataModal').remove();
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function enviarDados() {
+            const whats = document.getElementById('whatsappInput').value.trim();
+            const numeroEnvio = document.getElementById('numeroEnvioInput').value.trim();
+            
+            if (!whats || whats.length < 9) {
+                mostrarNotificacao("⚠️ Por favor, insira um número de WhatsApp válido (ex: 841234567)");
+                return;
+            }
+            if (!numeroEnvio || numeroEnvio.length < 9) {
+                mostrarNotificacao("⚠️ Por favor, insira o número M-Pesa/E-Mola que vai usar para enviar o pagamento");
+                return;
+            }
+            
+            dadosCliente = { whatsapp: whats, numeroEnvio: numeroEnvio };
+            
+            // Mostrar animação de processamento
+            const modalBody = document.querySelector('#dataModal .data-body');
+            modalBody.innerHTML = `
+                <div style="text-align:center; padding:20px;">
+                    <div style="font-size:50px;">⏳</div>
+                    <h3>Processando...</h3>
+                    <p>Enviando seus dados para verificação</p>
+                    <div style="margin-top:15px;">📡</div>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                modalBody.innerHTML = `
+                    <div style="text-align:center; padding:20px;">
+                        <div style="font-size:50px;">✅</div>
+                        <h3>Dados enviados com sucesso!</h3>
+                        <p>🔔 Assim que terminar o pagamento, seus conteúdos serão enviados para <strong>${whats}</strong></p>
+                        <p style="margin-top:10px; font-size:13px; color:#777;">Redirecionando para página de pagamento...</p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    fecharModal('dataModal');
+                    abrirPagamento();
+                }, 5000);
+            }, 2000);
+        }
+
+        // FUNÇÃO PARA ABRIR MODAL DE PAGAMENTO
+        function abrirPagamento() {
+            const nomeEmpresa = "LAURA";
+            const numeroEmpresa = "874756220";
+            
+            const pagHtml = `
+                <div id="paymentModal" class="payment-modal">
+                    <div class="payment-card">
+                        <div class="payment-header">💳 Pagamento VIP - ${valorAtual} MZN</div>
+                        <div class="payment-body" id="paymentBody">
+                            <div class="info-box">
+                                <p><strong>📲 Dados para transferência M-Pesa / E-Mola:</strong></p>
+                                <p><strong>Beneficiário:</strong> ${nomeEmpresa}</p>
+                                <div class="copy-area">
+                                    <span id="numeroEmpresaSpan">${numeroEmpresa}</span>
+                                    <button class="copy-btn" onclick="copiarNumero()">Copiar 📋</button>
+                                </div>
+                                <div id="copyFeedback" class="copy-feedback"></div>
+                                <p><small>⚠️ Envie o valor exato de <strong>${valorAtual} MZN</strong> para o número acima.</small></p>
+                            </div>
+                            
+                            <button class="btn-mpesa" onclick="abrirMpesa()">📲 PAGAR AGORA (E-mola *898#)</button>
+                            <button class="btn-pago" onclick="verificarPagamento()">✅ JÁ PAGUEI</button>
+                            <button style="background:#6c757d; margin-top:10px;" class="btn-emola" onclick="fecharModal('paymentModal')">❌ Fechar</button>
+                            <div id="statusPagamento" class="status-msg" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            if (document.getElementById('paymentModal')) document.getElementById('paymentModal').remove();
+            document.body.insertAdjacentHTML('beforeend', pagHtml);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function copiarNumero() {
+            const numero = document.getElementById('numeroEmpresaSpan').innerText;
+            navigator.clipboard.writeText(numero).then(() => {
+                const fb = document.getElementById('copyFeedback');
+                fb.innerText = '✅ Número ' + numero + ' copiado!';
+                setTimeout(() => fb.innerText = '', 2000);
+            });
+        }
+
+        function abrirMpesa() {
+            window.location.href = "tel:*150#";
+        }
+
+        function verificarPagamento() {
+            const statusDiv = document.getElementById('statusPagamento');
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = "⏳ Verificando pagamento... Aguarde";
+            statusDiv.style.background = "#fff3cd";
+            statusDiv.style.color = "#856404";
+            
+            setTimeout(() => {
+                statusDiv.innerHTML = "⚠️ PAGAMENTO NÃO DETECTADO! ⚠️<br><br>Por favor, realize o pagamento via M-Pesa/E-Mola e clique em 'JÁ PAGUEI' novamente após a transferência.";
+                statusDiv.style.background = "#f8d7da";
+                statusDiv.style.color = "#721c24";
+            }, 3000);
+        }
+
+        function fecharModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) modal.remove();
+            document.body.style.overflow = 'auto';
+        }
+
+        function mostrarNotificacao(msg) {
+            const notif = document.getElementById('notif');
+            notif.innerHTML = msg;
+            notif.style.display = "block";
+            setTimeout(() => notif.style.display = "none", 4000);
+        }
+
+        // Funções auxiliares do site
         function desbloquearVideo(qId) {
             const overlay = document.getElementById('overlay' + qId);
             const video = document.getElementById('video' + qId);
-            const arrow = document.getElementById('arrow' + qId);
-            
-            if (overlay) {
-                overlay.style.display = 'none';
-            }
-            
-            if (arrow) {
-                arrow.style.display = 'none';
-            }
-            
+            if (overlay) overlay.style.display = 'none';
             if (video) {
-                video.style.filter = 'blur(0px)';
-                video.style.transform = 'scale(1)';
                 video.muted = false;
-                video.play().catch(e => console.log("Autoplay precisa de interação"));
+                video.play().catch(e => console.log);
                 video.loop = true;
-                video.onended = function() { this.play(); };
             }
-            
-            // Mostrar botões de chamada
             const callArea = document.getElementById('callArea' + qId);
             if (callArea) {
                 callArea.style.display = 'block';
                 callArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-            
-            // Notificação
-            const notifDiv = document.getElementById('notif');
-            notifDiv.innerHTML = "🔓 Vídeo desbloqueado! Agora clica em SIM para vídeo chamada 🔥";
-            notifDiv.style.display = "block";
-            setTimeout(() => notifDiv.style.display = "none", 3000);
+            mostrarNotificacao("🔓 Vídeo desbloqueado! Agora clica em SIM para vídeo chamada 🔥");
         }
 
         function toggleAnswer(qId) {
             let answerDiv = document.getElementById('answer' + qId);
-            let videoElem = document.getElementById('video' + qId);
             if (answerDiv.style.display === 'block') {
-                if (videoElem) videoElem.pause();
                 answerDiv.style.display = 'none';
             } else {
-                for (let i = 1; i <= 4; i++) {
+                for (let i = 1; i <= 2; i++) {
                     let other = document.getElementById('answer' + i);
-                    if (other && other !== answerDiv) {
-                        other.style.display = 'none';
-                        let otherVideo = document.getElementById('video' + i);
-                        if (otherVideo) otherVideo.pause();
-                        let callDiv = document.getElementById('callArea' + i);
-                        if (callDiv) callDiv.style.display = 'none';
-                    }
+                    if (other && other !== answerDiv) other.style.display = 'none';
                 }
                 answerDiv.style.display = 'block';
             }
@@ -794,29 +954,7 @@
         function fecharChamada(qId) {
             let callArea = document.getElementById('callArea' + qId);
             if (callArea) callArea.style.display = 'none';
-            let notifDiv = document.getElementById('notif');
-            notifDiv.innerHTML = "💔 Que pena... Quando quiser é só clicar em SIM 💔";
-            notifDiv.style.display = "block";
-            setTimeout(() => notifDiv.style.display = "none", 3000);
-        }
-
-        function redirecionarPlanos() {
-            let notifDiv = document.getElementById('notif');
-            notifDiv.innerHTML = "💋 Boa escolha! Agora escolhe seu plano e ganha vídeo chamada comigo 🔥🍆💦";
-            notifDiv.style.display = "block";
-            setTimeout(() => notifDiv.style.display = "none", 2500);
-            document.querySelector('.section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            let plans = document.querySelectorAll('.plan');
-            plans.forEach(p => p.style.transform = 'scale(1.01)');
-            setTimeout(() => plans.forEach(p => p.style.transform = ''), 800);
-        }
-
-        function checkout197() {
-            window.location.href = "https://privezone.shop/checkouts/checkout-page-1/";
-        }
-
-        function checkout297() {
-            window.location.href = "https://privezone.shop/checkouts/checkout-page-3/";
+            mostrarNotificacao("💔 Que pena... Quando quiser é só clicar em SIM 💔");
         }
 
         function toggleFaq(el) {
@@ -824,16 +962,15 @@
             r.style.display = r.style.display === "block" ? "none" : "block";
         }
 
-        // Notificações aleatórias
-        const nomes = ["João", "Carlos", "Mário", "Nelson", "Paulo", "Rui", "Cláudio", "Edson",   "Fernando", "Pedro", "Dane", "Filipe", "Kadir", "Cleusio", "Mauro", "Junior"];
-        const cidades = ["Maputo", "Beira", "Nampula", "Tete", "Matola", "Quelimane", "Inhambane","Maputo",   "Naca", "Chimoio", "Tete", "Matola", "Quelimane", "Inhambane"];
+        // Notificações falsas
+        const nomes = ["João", "Carlos", "Mário", "Nelson", "Paulo", "Rui"];
+        const cidades = ["Maputo", "Beira", "Nampula", "Tete"];
         setInterval(() => {
             let n = nomes[Math.floor(Math.random() * nomes.length)];
             let c = cidades[Math.floor(Math.random() * cidades.length)];
-            let notif = document.getElementById("notif");
-            notif.innerHTML = "🔥 " + n + " de " + c + " ACABOU DE ENTRAR NO VIP 🔥";
-            notif.style.display = "block";
-            setTimeout(() => notif.style.display = "none", 4000);
+            document.getElementById("notif").innerHTML = "🔥 " + n + " de " + c + " ACABOU DE ENTRAR NO VIP 🔥";
+            document.getElementById("notif").style.display = "block";
+            setTimeout(() => document.getElementById("notif").style.display = "none", 4000);
         }, 7000);
 
         // Age gate
@@ -843,18 +980,17 @@
             document.getElementById("ageGate").style.display = "none";
             document.body.style.overflow = "auto";
         }
-        
-        window.onload = function() {
+        window.onload = function () {
             if (localStorage.getItem("18+") === "true") {
                 document.getElementById("ageGate").style.display = "none";
                 document.body.style.overflow = "auto";
             }
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById('answer' + i).style.display = 'none';
+            for (let i = 1; i <= 2; i++) {
+                const ans = document.getElementById('answer' + i);
+                if (ans) ans.style.display = 'none';
             }
         }
     </script>
-
 </body>
 
 </html>
