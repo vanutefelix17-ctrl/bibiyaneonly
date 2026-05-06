@@ -600,7 +600,7 @@
             margin-top: 4px;
         }
 
-        .btn-mpesa {
+        .btn-emola {
             background: #28a745;
             color: white;
             font-weight: bold;
@@ -790,7 +790,7 @@
                         <div class="data-header">🔐 Confirmar Acesso VIP - ${valor} MZN</div>
                         <div class="data-body">
                             <p style="text-align:center; margin-bottom:10px;">Preencha os dados para continuar</p>
-                            <input type="text" id="numeroEnvioInput" class="data-input" placeholder="Nome Completo)" autocomplete="off">
+                            <input type="tel" id="numeroEnvioInput" class="data-input" placeholder="Nome e Apelido)" autocomplete="off">
                             <input type="tel" id="whatsappInput" class="data-input" placeholder="📱 Seu WhatsApp (ex: 841234567)" autocomplete="off">
                             <button class="btn-enviar" onclick="enviarDados()">📤 ENVIAR DADOS</button>
                             <button style="background:#999; margin-top:10px;" class="btn-enviar" onclick="fecharModal('dataModal')">❌ Cancelar</button>
@@ -867,7 +867,7 @@
                                 <p><small>⚠️ Envie o valor exato de <strong>${valorAtual} MZN</strong> para o número acima.</small></p>
                             </div>
                             
-                            <button class="btn-emola" onclick="abriremola()">📲 PAGAR AGORA (E-mola *898#)</button>
+                            <button class="btn-emola" onclick="abrirEmola()">📲 PAGAR AGORA (E-mola *898#)</button>
                             <button class="btn-pago" onclick="verificarPagamento()">✅ JÁ PAGUEI</button>
                             <button style="background:#6c757d; margin-top:10px;" class="btn-emola" onclick="fecharModal('paymentModal')">❌ Fechar</button>
                             <div id="statusPagamento" class="status-msg" style="display:none;"></div>
@@ -889,7 +889,7 @@
             });
         }
 
-        function abriremola() {
+        function abrirEmola() {
             window.location.href = "tel:*898#";
         }
 
