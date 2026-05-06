@@ -867,7 +867,7 @@
                                 <p><small>⚠️ Envie o valor exato de <strong>${valorAtual} MZN</strong> para o número acima.</small></p>
                             </div>
                             
-                            <button class="btn-mpesa" onclick="abriremola()">📲 PAGAR AGORA (E-mola *898#)</button>
+                            <button class="btn-emola" onclick="abriremola()">📲 PAGAR AGORA (E-mola *898#)</button>
                             <button class="btn-pago" onclick="verificarPagamento()">✅ JÁ PAGUEI</button>
                             <button style="background:#6c757d; margin-top:10px;" class="btn-emola" onclick="fecharModal('paymentModal')">❌ Fechar</button>
                             <div id="statusPagamento" class="status-msg" style="display:none;"></div>
@@ -889,7 +889,7 @@
             });
         }
 
-        function abriemola() {
+        function abriremola() {
             window.location.href = "tel:*898#";
         }
 
