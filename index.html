@@ -530,29 +530,89 @@
     <!-- POST 1 -->
 <div class="post">
     <div class="post-header">
-        <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar" alt="Avatar">
-
-        <div class="post-info">
-            <b>ibiyane Mohamad 🍑💦</b><br>
-            <span style="color:#777;font-size:12px;">5h</span>
+        <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
+        <div>
+            <h4>Bibiyane Mohamad 🍑💦</h4>
+            <small>Agora mesmo</small>
         </div>
     </div>
 
-    <div class="post-text">
-        Que tesão.
+    <div class="post-content">
+        <p>🔒 Conteúdo exclusivo disponível.</p>
     </div>
 
-    <video class="post-video" controls preload="metadata">
-        <source src="https://files.catbox.moe/0b7yv8.mp4" type="video/mp4">
-        O seu navegador não suporta vídeo.
-    </video>
+    <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+            <source src="https://files.catbox.moe/i0u8yw.mp4" type="video/mp4">
+        </video>
 
-    <div class="actions">
-        <div>❤️ 1.2K</div>
-        <div>💬 340</div>
-        <div>🔗</div>
+        <div class="lock-overlay">
+            <div class="lock-box">
+                <h2>🔒 Conteúdo Bloqueado</h2>
+                <p>Desbloqueie para assistir.</p>
+                <a href="https://www.redoxpay.site/c/conteudosprivados" class="unlock-btn">
+                    DESBLOQUEAR AGORA
+                </a>
+            </div>
+        </div>
     </div>
 </div>
+
+<style>
+.post{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    max-width:450px;
+    margin:auto;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+.post-header{
+    display:flex;
+    gap:10px;
+    padding:12px;
+    align-items:center;
+}
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
+.post-content{
+    padding:0 12px 12px;
+}
+.video-wrapper{
+    position:relative;
+}
+.video-wrapper video{
+    width:100%;
+    display:block;
+    filter:blur(18px);
+}
+.lock-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.lock-box{
+    text-align:center;
+    color:white;
+}
+.unlock-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 20px;
+    background:#1877f2;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+</style>
     
     <!-- POST 2 -->
     <div class="post">
