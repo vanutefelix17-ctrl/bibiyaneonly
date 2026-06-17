@@ -107,6 +107,78 @@
             transform: scale(0.97);
         }
 
+        .post {
+            background: white;
+            margin: 15px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .post-info {
+            margin-left: 12px;
+        }
+
+        .post-text {
+            padding: 0 12px 8px 12px;
+            font-size: 15px;
+        }
+
+        .post-img {
+            height: 260px;
+            filter: blur(14px);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .lock-overlay {
+            position: relative;
+            margin-top: -70px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .lock-circle {
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            backdrop-filter: blur(4px);
+            border: 2px solid white;
+        }
+
+        .lock-circle span {
+            font-size: 28px;
+        }
+
+        .lock-text {
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 40px;
+            font-size: 13px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
         .actions {
             display: flex;
             justify-content: space-around;
@@ -159,51 +231,43 @@
             background: #ffffff;
             border-top: 1px solid #eee;
         }
-.post{
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    max-width:450px;
-    margin:auto;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
-}
-.post-header{
-    display:flex;
-    gap:10px;
-    padding:12px;
-    align-items:center;
-}
-.avatar{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    object-fit:cover;
-}
-.post-content{
-    padding:0 12px 12px;
-}
-.video-wrapper{
-    position:relative;
-}
-.video-wrapper video{
-    width:100%;
-    display:block;
-    filter:blur(18px);
-}
-.lock-box{
-    text-align:center;
-    color:white;
-}
-.unlock-btn{
-    display:inline-block;
-    margin-top:10px;
-    padding:12px 20px;
-    background:#1877f2;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-}
+
+        /* Container do vídeo com blur extremo */
+
+        .video-blur-container {
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .video-blur-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(20px);
+            transform: scale(1.05);
+            display: block;
+        }
+
+        /* Overlay do cadeado */
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            z-index: 10;
         }
 
         .lock-icon-big {
@@ -464,68 +528,25 @@
     </div>
 
     <!-- POST 1 -->
-<div class="post">
-    <div class="post-header">
-        <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
-        <div>
-            <h4>Bibiyane Mohamad 🍑💦</h4>
-            <small>Agora mesmo</small>
-        </div>
-    </div>
-
-    <div class="post-content">
-        <p>🔒 Conteúdo exclusivo disponível.</p>
-    </div>
-
-    <div class="video-wrapper">
-        <video autoplay muted loop playsinline>
-            <source src="https://files.catbox.moe/i0u8yw.mp4" type="video/mp4">
-        </video>
-
-        <div class="lock-overlay">
-            <div class="lock-box">
-                <h2>🔒 Conteúdo Bloqueado</h2>
-                <p>Desbloqueie para assistir.</p>
-                <a href="https://www.redoxpay.site/c/conteudosprivados" class="unlock-btn">
-                    DESBLOQUEAR AGORA
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-    
-    <!-- POST 2 -->
     <div class="post">
-    <div class="post-header">
-        <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
-        <div>
-            <h4>Bibiyane Mohamad</h4>
-            <small>Agora mesmo</small>
+        <div class="post-header">
+            <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
+            <div class="post-info"><b>Bibiyane Mohamad 🍑💦</b><br><span style="color:#777;font-size:12px;">12h</span></div>
         </div>
-    </div>
-
-    <div class="post-content">
-        <p>🔒 Conteúdo exclusivo disponível.</p>
-    </div>
-
-    <div class="video-wrapper">
-        <video autoplay muted loop playsinline>
-            <source src="https://files.catbox.moe/i0u8yw.mp4" type="video/mp4">
-        </video>
-
+        <div class="post-text">Vem ter uma vídeo chamada comigo 🍑💦</div>
+        <div class="post-img" style="background:url('https://i.postimg.cc/QxJkfkGQ/IMG-0726.jpg');"></div>
         <div class="lock-overlay">
-            <div class="lock-box">
-                <h2>🔒 Conteúdo Bloqueado</h2>
-                <p>Desbloqueie para assistir.</p>
-                <a href="https://files.catbox.moe/8g5tg5.mp4" class="unlock-btn">
-                    DESBLOQUEAR AGORA
-                </a>
-            </div>
+            <div class="lock-circle"><span>🔒</span></div>
+            <div class="lock-text">Conteúdo Exclusivo • Desbloqueie abaixo</div>
+        </div>
+        <div class="actions">
+            <div>❤️ 723</div>
+            <div>💬 201</div>
+            <div>🔗</div>
         </div>
     </div>
-</div>
 
-    <!-- POST 3 -->
+    <!-- POST 2 -->
     <div class="post">
         <div class="post-header">
             <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
@@ -568,8 +589,8 @@
                 </div>
                 <div class="prices">
                     <div><b>297 MZN</b></div>
-                    <div class="sub">≈ 6,72 EUR</div>
-                    <div class="kz">≈ 7.154 Kz</div>
+                    <div class="sub">≈ 4,27 EUR</div>
+                    <div class="kz">≈ 3.700 Kz</div>
                 </div>
             </div>
         </div>
