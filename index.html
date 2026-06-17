@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Bibiyane Mohamad • Portal VIP +18</title>
+    <meta name="robots" content="noindex, nofollow">
 
     <style>
         * {
@@ -135,112 +136,15 @@
         .post-text {
             padding: 0 12px 8px 12px;
             font-size: 15px;
+            line-height: 1.5;
         }
-
-        .post-img {
-            height: 260px;
-            filter: blur(14px);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .lock-overlay {
-            position: relative;
-            margin-top: -70px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .lock-circle {
-            width: 55px;
-            height: 55px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            backdrop-filter: blur(4px);
-            border: 2px solid white;
-        }
-
-        .lock-circle span {
-            font-size: 28px;
-        }
-
-        .lock-text {
-            background: rgba(0, 0, 0, 0.75);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 40px;
-            font-size: 13px;
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: space-around;
-            padding: 12px;
-            color: #777;
-            border-top: 1px solid #eee;
-        }
-
-        .questions-section {
-            background: white;
-            margin: 20px 15px;
-            border-radius: 24px;
-            padding: 5px 0 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #00a8cc;
-            padding: 15px 20px 5px 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .question-card {
-            background: #f9f9ff;
-            margin: 12px 15px;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid #e0e7ff;
-        }
-
-        .question-header {
-            padding: 16px;
-            font-weight: bold;
-            background: #fff;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 16px;
-            color: #1e2a3e;
-        }
-
-        .answer-area {
-            display: none;
-            padding: 0 0 16px 0;
-            background: #ffffff;
-            border-top: 1px solid #eee;
-        }
-
-        /* Container do vídeo com blur extremo */
 
         .video-blur-container {
             position: relative;
             width: 100%;
-            border-radius: 16px;
-            overflow: hidden;
             aspect-ratio: 16/9;
-            background: #000;
+            background: #1a1a2e;
+            overflow: hidden;
         }
 
         .video-blur-container video {
@@ -250,9 +154,8 @@
             filter: blur(20px);
             transform: scale(1.05);
             display: block;
+            background: #1a1a2e;
         }
-
-        /* Overlay do cadeado */
 
         .video-overlay {
             position: absolute;
@@ -260,19 +163,20 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 15px;
             z-index: 10;
+            pointer-events: none;
         }
 
         .lock-icon-big {
             font-size: 60px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -283,15 +187,13 @@
         }
 
         .overlay-text {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 10px 20px;
             border-radius: 40px;
             font-weight: bold;
             font-size: 14px;
         }
-
-        /* Seta animada apontando para baixo */
 
         .arrow-down-animation {
             position: absolute;
@@ -305,12 +207,13 @@
             border-radius: 50%;
             width: 45px;
             height: 45px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             font-size: 28px;
             color: #ff6a5c;
             text-shadow: 0 0 5px white;
+            pointer-events: auto;
         }
 
         @keyframes bounce {
@@ -323,22 +226,19 @@
             }
         }
 
-        .persuasive-btn {
-            background: linear-gradient(90deg, #ff6a5c, #e63946);
-            margin: 15px 15px 10px 15px;
-            padding: 14px;
-            text-align: center;
-            border-radius: 60px;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            padding: 12px;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 14px;
         }
 
-        .persuasive-btn:active {
-            transform: scale(0.97);
+        .actions span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .call-buttons {
@@ -520,48 +420,140 @@
         <div class="username">@bibiyanemohamad • Maputo Mz</div>
         <div style="color:#00a8cc; margin: 5px 0;">💎 Disponível agora para conteúdo privado</div>
         <div class="bio">
-           Conteúdo exclusivo 🔒 +18<br> Acesso privado de meus conteudos porno 🔥<br> Novos conteudos todos os dias + área VIP 👑<br> Só para quem quer me ver nua…
+            Conteúdo exclusivo 🔒 +18<br>
+            Acesso privado de meus conteudos porno 🔥<br>
+            Novos conteudos todos os dias + área VIP 👑<br>
+            Só para quem quer me ver nua…
+        </div>
+        <div style="color:#ff6a5c; font-weight:bold; margin-top:5px;">
+            🟢 +987 pessoas estão vendo agora
         </div>
         <div class="cta" onclick="checkout199()">
             👑 QUERO SER MEMBRO VIP
         </div>
     </div>
 
-    <!-- POST 1 -->
+    <!-- ============ POST 1 ============ -->
     <div class="post">
         <div class="post-header">
             <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
             <div class="post-info"><b>Bibiyane Mohamad 🍑💦</b><br><span style="color:#777;font-size:12px;">12h</span></div>
         </div>
-        <div class="post-text">Vem ter uma vídeo chamada comigo 🍑💦</div>
-        <div class="post-img" style="background:url('https://i.postimg.cc/QxJkfkGQ/IMG-0726.jpg');"></div>
-        <div class="lock-overlay">
-            <div class="lock-circle"><span>🔒</span></div>
-            <div class="lock-text">Conteúdo Exclusivo • Desbloqueie abaixo</div>
+        <div class="post-text">🔥 Quem está pronto para uma vídeo chamada ousada? Hoje estou com um apetite especial… e só os verdadeiros fãs vão saber o que vem a seguir. 😈💦</div>
+        <div class="video-blur-container">
+            <video id="video1" muted playsinline loop preload="auto">
+                <source src="https://files.catbox.moe/i0u8yw.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="overlay1">
+                <div class="lock-icon-big">🔒</div>
+                <div class="overlay-text">🔓 Desbloqueie com plano VIP</div>
+            </div>
+            <div class="arrow-down-animation" id="arrow1" onclick="desbloquearVideo(1)">⬇️</div>
+        </div>
+        <div id="callArea1" style="display:none; padding:10px;">
+            <div class="mensagem-persuasiva">🔥 Agora que viste, bora marcar vídeo chamada? 💦</div>
+            <div class="call-buttons">
+                <div class="btn-sim" onclick="redirecionarPlanos()">✅ SIM, QUERO</div>
+                <div class="btn-nao" onclick="fecharChamada(1)">❌ NÃO</div>
+            </div>
         </div>
         <div class="actions">
-            <div>❤️ 723</div>
-            <div>💬 201</div>
-            <div>🔗</div>
+            <span>❤️ 1.2K</span>
+            <span>💬 312</span>
+            <span>🔗 Partilhar</span>
         </div>
     </div>
 
-    <!-- POST 2 -->
+    <!-- ============ POST 2 ============ -->
     <div class="post">
         <div class="post-header">
             <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
-            <div class="post-info"><b>Bibiyane Mohamad 🍑💦</b><br><span style="color:#777;font-size:12px;">5h</span></div>
+            <div class="post-info"><b>Bibiyane Mohamad 🍑💦</b><br><span style="color:#777;font-size:12px;">8h</span></div>
         </div>
-        <div class="post-text">Conteúdo novo acabou de sair 💦🍑</div>
-        <div class="post-img" style="background:url('https://i.postimg.cc/HLqyYVDz/IMG-0724.jpg');"></div>
-        <div class="lock-overlay">
-            <div class="lock-circle"><span>🔒</span></div>
-            <div class="lock-text">Desbloqueie agora</div>
+        <div class="post-text">📹 Acabei de gravar algo que vai deixar vocês sem fôlego… Literalmente. 🥵🔥 Preparem-se para ver o meu lado mais selvagem. Quem vai ser o próximo a me ver assim? 👀💦</div>
+        <div class="video-blur-container">
+            <video id="video2" muted playsinline loop preload="auto">
+                <source src="https://files.catbox.moe/8g5tg5.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="overlay2">
+                <div class="lock-icon-big">🔒</div>
+                <div class="overlay-text">🔓 Desbloqueie com plano VIP</div>
+            </div>
+            <div class="arrow-down-animation" id="arrow2" onclick="desbloquearVideo(2)">⬇️</div>
+        </div>
+        <div id="callArea2" style="display:none; padding:10px;">
+            <div class="mensagem-persuasiva">🔥 Agora que viste, bora marcar vídeo chamada? 💦</div>
+            <div class="call-buttons">
+                <div class="btn-sim" onclick="redirecionarPlanos()">✅ SIM, QUERO</div>
+                <div class="btn-nao" onclick="fecharChamada(2)">❌ NÃO</div>
+            </div>
         </div>
         <div class="actions">
-            <div>❤️ 1.2K</div>
-            <div>💬 340</div>
-            <div>🔗</div>
+            <span>❤️ 2.4K</span>
+            <span>💬 567</span>
+            <span>🔗 Partilhar</span>
+        </div>
+    </div>
+
+    <!-- ============ POST 3 ============ -->
+    <div class="post">
+        <div class="post-header">
+            <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
+            <div class="post-info"><b>Bibiyane Mohamad 🍑💦</b><br><span style="color:#777;font-size:12px;">4h</span></div>
+        </div>
+        <div class="post-text">🎬 Sabe aquele vídeo que prometi? Então… está aqui. 🔥 São 3 minutos de pura sedução, sem cortes, sem censura. Apenas eu e a câmera. Quem tem coragem de ver até o fim? 👀💦</div>
+        <div class="video-blur-container">
+            <video id="video3" muted playsinline loop preload="auto">
+                <source src="https://files.catbox.moe/zc8auc.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="overlay3">
+                <div class="lock-icon-big">🔒</div>
+                <div class="overlay-text">🔓 Desbloqueie com plano VIP</div>
+            </div>
+            <div class="arrow-down-animation" id="arrow3" onclick="desbloquearVideo(3)">⬇️</div>
+        </div>
+        <div id="callArea3" style="display:none; padding:10px;">
+            <div class="mensagem-persuasiva">🔥 Agora que viste, bora marcar vídeo chamada? 💦</div>
+            <div class="call-buttons">
+                <div class="btn-sim" onclick="redirecionarPlanos()">✅ SIM, QUERO</div>
+                <div class="btn-nao" onclick="fecharChamada(3)">❌ NÃO</div>
+            </div>
+        </div>
+        <div class="actions">
+            <span>❤️ 3.1K</span>
+            <span>💬 723</span>
+            <span>🔗 Partilhar</span>
+        </div>
+    </div>
+
+    <!-- ============ POST 4 ============ -->
+    <div class="post">
+        <div class="post-header">
+            <img src="https://i.postimg.cc/bvtPhvRk/IMG-0723.jpg" class="avatar">
+            <div class="post-info"><b>Bibiyane Mohamad 🍑💦</b><br><span style="color:#777;font-size:12px;">1h</span></div>
+        </div>
+        <div class="post-text">🌙 Já são quase 2 da manhã e estou aqui, só com o telemóvel na mão e um desejo enorme… 🔥 Quem vai ser o sortudo que vai me ver assim hoje? Só os VIPs sabem o que vem a seguir… 😈💦</div>
+        <div class="video-blur-container">
+            <video id="video4" muted playsinline loop preload="auto">
+                <source src="https://files.catbox.moe/zz9d54.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay" id="overlay4">
+                <div class="lock-icon-big">🔒</div>
+                <div class="overlay-text">🔓 Desbloqueie com plano VIP</div>
+            </div>
+            <div class="arrow-down-animation" id="arrow4" onclick="desbloquearVideo(4)">⬇️</div>
+        </div>
+        <div id="callArea4" style="display:none; padding:10px;">
+            <div class="mensagem-persuasiva">🔥 Agora que viste, bora marcar vídeo chamada? 💦</div>
+            <div class="call-buttons">
+                <div class="btn-sim" onclick="redirecionarPlanos()">✅ SIM, QUERO</div>
+                <div class="btn-nao" onclick="fecharChamada(4)">❌ NÃO</div>
+            </div>
+        </div>
+        <div class="actions">
+            <span>❤️ 4.7K</span>
+            <span>💬 1.2K</span>
+            <span>🔗 Partilhar</span>
         </div>
     </div>
 
@@ -579,7 +571,6 @@
                 <div class="kz">≈ 2.500 Kz</div>
             </div>
         </div>
-
         <div class="popular-box">
             <div class="popular-tag">🔥 MAIS POPULAR 🔥</div>
             <div class="plan popular" onclick="checkout297()">
@@ -594,6 +585,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
     <!-- FAQ -->
     <div class="faq">
@@ -611,169 +603,75 @@
 
     <div id="notif">🔥 Alguém de Maputo entrou no VIP</div>
 
-    <!-- AGE GATE (TEU ORIGINAL) -->
-    <div id="ageGate" style="
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(180deg,#0b1c2c,#0e2a44);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:99999;
-font-family:Arial;
-">
-
-        <div style="
-background:#12263a;
-padding:30px;
-border-radius:20px;
-text-align:center;
-color:white;
-width:90%;
-max-width:350px;
-box-shadow:0 0 40px rgba(0,0,0,0.5);
-">
-
-            <div style="
-width:70px;height:70px;margin:auto;
-background:#00bcd4;border-radius:20px;
-display:flex;align-items:center;justify-content:center;
-font-size:30px;box-shadow:0 0 20px #00bcd4;
-">🔒</div>
-
-            <div style="margin-top:15px;background:#2c2c2c;padding:5px 12px;border-radius:20px;font-size:12px;color:#ffcc66;">
-                ✨ CONTEÚDO EXCLUSIVO
-            </div>
-
+    <div id="ageGate">
+        <div style="background:#12263a; padding:30px; border-radius:20px; text-align:center; color:white; width:90%; max-width:350px; box-shadow:0 0 40px rgba(0,0,0,0.5);">
+            <div style="width:70px;height:70px;margin:auto; background:#00bcd4; border-radius:20px; display:flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 0 20px #00bcd4;">🔒</div>
+            <div style="margin-top:15px; background:#2c2c2c; padding:5px 12px; border-radius:20px; font-size:12px; color:#ffcc66;">✨ CONTEÚDO EXCLUSIVO</div>
             <h2 style="margin-top:15px;">Verificação de Idade</h2>
-
-            <p style="color:#ccc;font-size:14px;">
-                Este site contém conteúdo restrito para maiores de 18 anos.<br> Confirme que tem 18 anos ou mais para continuar.
-            </p>
-
-            <button onclick="entrar()" style="
-margin-top:15px;padding:15px;width:100%;
-background:linear-gradient(90deg,#00bcd4,#0097a7);
-border:none;border-radius:12px;color:white;
-font-weight:bold;font-size:16px;cursor:pointer;
-box-shadow:0 0 20px #00bcd4;
-">
-🛡️ Sim, tenho +18 anos
-</button>
-
-            <button onclick="sair()" style="
-margin-top:10px;padding:15px;width:100%;
-background:#ccc;border:none;border-radius:12px;
-color:#777;font-size:16px;cursor:pointer;
-">
-Não, sou menor de idade
-</button>
-
-            <p style="margin-top:10px;font-size:12px;color:#aaa;">
-                🔒 Ambiente seguro • Privacidade garantida
-            </p>
-
+            <p style="color:#ccc; font-size:14px;">Este site contém conteúdo restrito para maiores de 18 anos.<br> Confirme que tem 18 anos ou mais para continuar.</p>
+            <button onclick="entrar()" style="margin-top:15px; padding:15px; width:100%; background:linear-gradient(90deg,#00bcd4,#0097a7); border:none; border-radius:12px; color:white; font-weight:bold; font-size:16px; cursor:pointer; box-shadow:0 0 20px #00bcd4;">
+                🛡️ Sim, tenho +18 anos
+            </button>
+            <button onclick="sair()" style="margin-top:10px; padding:15px; width:100%; background:#ccc; border:none; border-radius:12px; color:#777; font-size:16px; cursor:pointer;">
+                Não, sou menor de idade
+            </button>
+            <p style="margin-top:10px; font-size:12px; color:#aaa;">🔒 Ambiente seguro • Privacidade garantida</p>
         </div>
     </div>
 
     <script>
-        // Mostrar seta após 3 segundos (para todas as perguntas)
-        setTimeout(() => {
-            for (let i = 1; i <= 4; i++) {
-                const arrow = document.getElementById('arrow' + i);
-                if (arrow) arrow.style.display = 'flex';
-            }
-        }, 3000);
-
-        // Função para desbloquear vídeo (remove blur e overlay)
         function desbloquearVideo(qId) {
             const overlay = document.getElementById('overlay' + qId);
             const video = document.getElementById('video' + qId);
             const arrow = document.getElementById('arrow' + qId);
 
-            if (overlay) {
-                overlay.style.display = 'none';
-            }
-
-            if (arrow) {
-                arrow.style.display = 'none';
-            }
+            if (overlay) overlay.style.display = 'none';
+            if (arrow) arrow.style.display = 'none';
 
             if (video) {
                 video.style.filter = 'blur(0px)';
                 video.style.transform = 'scale(1)';
                 video.muted = false;
-                video.play().catch(e => console.log("Autoplay precisa de interação"));
+                video.play().catch(e => {
+                    document.addEventListener('click', function playOnce() {
+                        video.play();
+                        document.removeEventListener('click', playOnce);
+                    }, { once: true });
+                });
                 video.loop = true;
-                video.onended = function() {
-                    this.play();
-                };
+                video.onended = function() { this.play(); };
             }
 
-            // Mostrar botões de chamada
             const callArea = document.getElementById('callArea' + qId);
             if (callArea) {
                 callArea.style.display = 'block';
-                callArea.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                callArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
 
-            // Notificação
             const notifDiv = document.getElementById('notif');
             notifDiv.innerHTML = "🔓 Vídeo desbloqueado! Agora clica em SIM para vídeo chamada 🔥";
             notifDiv.style.display = "block";
-            setTimeout(() => notifDiv.style.display = "none", 3000);
-        }
-
-        function toggleAnswer(qId) {
-            let answerDiv = document.getElementById('answer' + qId);
-            let videoElem = document.getElementById('video' + qId);
-            if (answerDiv.style.display === 'block') {
-                if (videoElem) videoElem.pause();
-                answerDiv.style.display = 'none';
-            } else {
-                for (let i = 1; i <= 4; i++) {
-                    let other = document.getElementById('answer' + i);
-                    if (other && other !== answerDiv) {
-                        other.style.display = 'none';
-                        let otherVideo = document.getElementById('video' + i);
-                        if (otherVideo) otherVideo.pause();
-                        let callDiv = document.getElementById('callArea' + i);
-                        if (callDiv) callDiv.style.display = 'none';
-                    }
-                }
-                answerDiv.style.display = 'block';
-            }
+            setTimeout(() => notifDiv.style.display = "none", 4000);
         }
 
         function fecharChamada(qId) {
-            let callArea = document.getElementById('callArea' + qId);
+            const callArea = document.getElementById('callArea' + qId);
             if (callArea) callArea.style.display = 'none';
-            let notifDiv = document.getElementById('notif');
+            const notifDiv = document.getElementById('notif');
             notifDiv.innerHTML = "💔 Que pena... Quando quiser é só clicar em SIM 💔";
             notifDiv.style.display = "block";
-            setTimeout(() => notifDiv.style.display = "none", 3000);
+            setTimeout(() => notifDiv.style.display = "none", 4000);
         }
 
         function redirecionarPlanos() {
-            let notifDiv = document.getElementById('notif');
+            const notifDiv = document.getElementById('notif');
             notifDiv.innerHTML = "💋 Boa escolha! Agora escolhe seu plano e ganha vídeo chamada comigo 🔥🍆💦";
             notifDiv.style.display = "block";
-            setTimeout(() => notifDiv.style.display = "none", 2500);
-            document.querySelector('.section').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            let plans = document.querySelectorAll('.plan');
-            plans.forEach(p => p.style.transform = 'scale(1.01)');
-            setTimeout(() => plans.forEach(p => p.style.transform = ''), 800);
+            setTimeout(() => notifDiv.style.display = "none", 3000);
+            document.querySelector('.section').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
+        // ========== NOVOS CHECKOUTS ==========
         function checkout199() {
             window.location.href = "https://www.redoxpay.site/c/conteudosprivados";
         }
@@ -783,23 +681,22 @@ Não, sou menor de idade
         }
 
         function toggleFaq(el) {
-            let r = el.nextElementSibling;
+            const r = el.nextElementSibling;
             r.style.display = r.style.display === "block" ? "none" : "block";
         }
 
-        // Notificações aleatórias
         const nomes = ["João", "Carlos", "Mário", "Nelson", "Paulo", "Rui", "Cláudio", "Edson", "Fernando", "Pedro", "Dane", "Filipe", "Kadir", "Cleusio", "Mauro", "Junior"];
-        const cidades = ["Maputo", "Beira", "Nampula", "Tete", "Matola", "Quelimane", "Inhambane", "Maputo", "Naca", "Chimoio", "Tete", "Matola", "Quelimane", "Inhambane"];
+        const cidades = ["Maputo", "Beira", "Nampula", "Tete", "Matola", "Quelimane", "Inhambane", "Naca", "Chimoio"];
+
         setInterval(() => {
-            let n = nomes[Math.floor(Math.random() * nomes.length)];
-            let c = cidades[Math.floor(Math.random() * cidades.length)];
-            let notif = document.getElementById("notif");
+            const n = nomes[Math.floor(Math.random() * nomes.length)];
+            const c = cidades[Math.floor(Math.random() * cidades.length)];
+            const notif = document.getElementById('notif');
             notif.innerHTML = "🔥 " + n + " de " + c + " ACABOU DE ENTRAR NO VIP 🔥";
             notif.style.display = "block";
             setTimeout(() => notif.style.display = "none", 4000);
         }, 7000);
 
-        // Age gate
         document.body.style.overflow = "hidden";
 
         function entrar() {
@@ -808,14 +705,21 @@ Não, sou menor de idade
             document.body.style.overflow = "auto";
         }
 
+        function sair() {
+            window.location.href = "https://www.google.com";
+        }
+
         window.onload = function() {
             if (localStorage.getItem("18+") === "true") {
                 document.getElementById("ageGate").style.display = "none";
                 document.body.style.overflow = "auto";
             }
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById('answer' + i).style.display = 'none';
-            }
+            setTimeout(() => {
+                for (let i = 1; i <= 4; i++) {
+                    const arrow = document.getElementById('arrow' + i);
+                    if (arrow) arrow.style.display = 'flex';
+                }
+            }, 2000);
         }
     </script>
 
